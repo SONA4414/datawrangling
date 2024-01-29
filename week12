@@ -1,0 +1,22 @@
+EXPERIMENT-12
+AIM: Advanced visualization tools: using filters, using the detail panel, using the size panels,
+customizing filters, using and customizing tooltips, formatting data with colors.
+To assign a color to marks in the view, do one of the following:
+
+•	On the Marks card, click Color, and then select a color from the menu.
+
+This updates all marks in the view to the color you choose. All marks have a default color, even when there are no fields on Color on the Marks card. For most marks, blue is the default color; for text, black is the default color.
+
+Add tooltips to marks
+
+Tooltips are details that appear when you hover over one or more marks in the view. Tooltips are also convenient for quickly filtering or
+removing a selection, or viewing underlying data. You can edit a tooltip to include both static and dynamic text. You can also modify which
+fields are included in a tooltip and whether you want to be able to use those fields to select marks in the view..
+
+Change the size of marks
+To change the size of marks in the view, do one of the following:
+On the Marks card, click Size, and then move the slider to the left or right
+
+
+
+
