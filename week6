@@ -1,0 +1,35 @@
+AIM: Foundations for building data visualizations, creating first visualization
+SOURCE CODE:
+
+1>	Data visualization is the representation of data through use of common graphics, such as charts, plots, infographics, and even animations. 
+These visual displays of information communicate complex data relationships and data-driven insights in a way that is easy to understand.
+2>	The importance of data visualization is simple: it helps people see, interact with, and better understand data. Whether simple or complex, 
+the right visualization can bring everyone on the same page, regardless of their level of expertise.
+3>	In a nutshell, exploratory data visualization helps you figure out what’s in your data, while explanatory visualization helps you to 
+communicate what you’ve found. Exploration takes place while you’re still analyzing the data, while explanation comes towards the end of the process when you’re ready to share your findings.
+
+
+Five data visualization categories
+
+When considering the different types of data viz, it helps to be aware of the different categories that these visualizations may fall into:
+ 
+•	Temporal data visualizations are linear and one-dimensional. Examples include scatterplots, timelines, and line graphs.
+•	Hierarchical visualizations organize groups within larger groups, and are often used to display clusters of information. Examples include tree diagrams, ring charts, and sunburst diagrams.
+•	Network visualizations show the relationships and connections between multiple datasets. Examples include matrix charts, word clouds, and node-link diagrams.
+•	Multidimensional or 3D visualizations are used to depict two or more variables. Examples include pie charts, Venn diagrams, stacked bar graphs, and histograms.
+•	Geospatial visualizations convey various data points in relation to physical, real-world locations (for example, voting patterns across a certain country). Examples include heat maps, cartograms, and density maps.
+
+
+Five common types of data visualization (and when to use them)
+1.	Scatterplots
+Scatterplots (or scatter graphs) visualize the relationship between two variables. One variable is shown on the x-axis, and the other on the y-axis, with each data point depicted as a single “dot” or item on the graph. This creates a “scatter” effect, hence the name
+2.	Bar charts
+Bar charts are used to plot categorical data against discrete values.
+Categorical data refers to data that is not numeric, and it’s often used to describe certain traits or characteristics. Some examples of categorical data include things like education level (e.g. high school, undergrad, or post-grad) and age group (e.g. under 30, under 40, under 50, or 50 and over).
+3.	Pie charts
+Just like bar charts, pie charts are used to visualize categorical data.
+However, while bar charts represent multiple categories of data, pie charts are used to visualize just one single variable broken down into percentages or proportions. A pie chart is essentially a circle divided into different “slices,” with each slice representing the percentage it contributes to the whole. Thus, the size of each pie slice is proportional to how much it contributes to the whole “pie.”
+4.	Network graphs
+Not all data is simple enough to be summarized in a bar or pie chart. For those more complex datasets, there are a range of more elaborate data visualizations at your disposal—network graphs being one of them.
+5.	Geographical maps
+Geo maps are used to visualize the distribution of data in relation to a physical, geographical area.For example, you could use a color-coded map to see how natural oil reserves are distributed across the world, or to visualize how different states voted in a political election. Maps are an extremely versatile form of data visualization, and are an excellent way of communicating all kinds of location- related data.
