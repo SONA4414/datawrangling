@@ -1,0 +1,30 @@
+EXPERIMENT-14
+
+AIM: Creating custom charts, cyclical data and circular area charts, dual axis charts. 
+
+Funnel chart:
+Step 1:
+Connect the Sample superstore data’s Order tab to your tableau.
+Step 2:
+Drag the “Ship Mode” dimension to the row shelf and “Sales” measure to the column shelf.
+Step 3:
+Select the chart type as area. This you can select from the Marks as shown below.
+
+We will implement on stacked Bars
+
+In the following example we can see revenue by Marital status, Gender and Annual Income. 
+The gender used to color stacked bars in this case. Let’s assume that we are not sure which 
+dimension is the best one to be used as a color for stack bars. Here cycle Fields comes as a
+handy feature that allow cycling through available dimensions. In our case you may need to use cycle fields 3 times to see all combinations of the selected dimensions.
+
+What is a Dual Axis Chart?
+Dual-axis charts are a combination of two charts. It is used to visualize two or more different measures in two different chart types i.e. it depicts the relationship between two variables with different amplitude and scale.
+To create a dual-axis chart we must have one date column and two measures. Let’s understand how to create a Dual Axis Chart in Tableau with an example Steps to create a Dual Axis Chart
+1.	Connect a file (here, we will use Sample SuperStore data)
+2.	Drag and Drop Category into the column shelf
+3.	Drag and Drop Profit and Discount into the row shelf 4.Here, we have two charts present on multiple axes
+
+•	Right-click on Sum (Profit)
+•	Select Dual-axis from the drop-down
+•	We get the desired dual-axis chart
+
