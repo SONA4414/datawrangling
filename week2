@@ -1,0 +1,19 @@
+EXPERIMENT- 2:
+AIM: Develop the python script to parse the pdf files using pdfminer. 
+from nltk.tokenize import RegexpTokenizer from pdfminer.high_level import extract_text from nltk.probability import FreqDist
+# Extract the text from PDF file
+text = extract_text('2010.00462.pdf')
+# Create an instance of tokenizer using NLTK ResexpTokenizer tokenizer = RegexpTokenizer('\w+')
+# Tokenize the text read from PDF tokens = tokenizer.tokenize(text) # Find Frequency Distribution freqdist = FreqDist(tokens)
+# Find words whose length is greater than 5 and frequency greater than 20 long_frequent_words = [words for words in tokens if len(words) > 5 and freqdist[words] > 20] long_frequent_words
+Output:
+
+['PREPRINT',
+'different',
+ 
+'insurance', 'language', 'insurance', 'information', 'analysis', 'mining', 'insurance',
+FreqDist(long_frequent_words).plot()
+
+In case you want to find which all words occurred together more often, here is the command you will need to execute:
+#Create NLTK.Text instance using tokens created using tokenizer text = nltk.Text(tokens)
+# Execute collocation_list method on nltk.Text instance text.collocation_list()
