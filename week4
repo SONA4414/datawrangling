@@ -1,0 +1,121 @@
+EXPERIMENT-4
+
+AIM: Draw the chart between perceived corruption scores compared to the child labour percentages using matplotlib.
+pip install matplotlib
+import matplotlib.pyplot as plt import pandas as pd
+cl=pd.read_csv('National Child Labour.csv') cl
+OUTPUT:
+
+
+
+cpi=pd.read_csv('history.csv') cpi
+OUTPUT:
+
+
+CPI 2016
+Rank	Country	Country Code	Region	CPI 2018 Score	CPI 2019
+Score	CPI 2020
+Score	CPI 2021
+Score	CPI 2022
+Score	
+
+0	
+1	
+New Zealand	
+NZL	
+Asia Pacific	
+90	
+88.0	
+91.0	
+91.0	
+90.0
+ 
+CPI 2016
+Rank	Country	Country Code	Region	CPI 2018 Score	CPI 2019
+Score	CPI 2020
+Score	CPI 2021
+Score	CPI 2022
+Score	
+
+1	
+1	
+Denmark	
+DNK	
+Europe and Central
+Asia	
+90	
+91.0	
+92.0	
+91.0	
+90.0
+
+
+2	
+
+3	
+
+Finland	
+
+FIN	
+Europe and Central
+Asia	
+
+89	
+
+90.0	
+
+89.0	
+
+89.0	
+
+90.0
+
+
+3	
+
+4	
+
+Sweden	
+
+SWE	
+Europe and Central
+Asia	
+
+88	
+
+89.0	
+
+87.0	
+
+89.0	
+
+88.0
+
+4	
+5	
+Switzerland	
+CHE	
+Europe and Central
+Asia	
+86	
+86.0	
+86.0	
+85.0	
+86.0
+
+
+new=cpi.merge(cl, how='inner') new.head()
+OUTPUT:
+
+plt.plot(new['CPI 2022 Score'],new['2016 [YR2016]'])
+[<matplotlib.lines.Line2D at 0x248c6352b90>]
+
+x=new['CPI 2022 Score'] y=new['2013 [YR2013]']
+plt.title('World wide corruption Rate') plt.xlabel('Child Labour') plt.ylabel('CPI 2022 Score') plt.bar(x,y)
+<BarContainer object of 171 artists>
+
+new['CPI 2022 Score'].value_counts().plot(kind='pie')
+<Axes: ylabel='count'>
+
+plt.scatter(x,y)
+<matplotlib.collections.PathCollection at 0x248c5f60790>
