@@ -1,0 +1,26 @@
+EXPERIMENT- 8
+AIM: Tableau calculations, overview of SUM, AVG and aggregate features, creating custom
+Calculations and fields.
+SUM and AVG (Average) Functions
+
+SUM Function
+The SUM function in Tableau calculates the total sum of a numeric field. You can use it to find the sum of values in a column or as part of a more complex calculation. To use SUM, simply drag and drop a numeric field into the "SUM" shelf, or you can create a calculated field using the SUM function.
+AVG (Average) Function
+The AVG function calculates the average (mean) value of a numeric field. Like SUM, you can use it by dragging a numeric field into the "AVG" shelf or creating a calculated field with the AVG function.
+Aggregate Functions:
+Tableau provides a range of aggregate functions that allow you to perform calculations on groups of data. Common aggregate functions include SUM, AVG, COUNT, MIN (minimum value), and MAX (maximum value). These functions are particularly useful when you want to analyze data at different levels of granularity (e.g., by category, region, or time period).
+
+Creating Custom Calculations
+Tableau allows you to create custom calculations using calculated fields. Here's how to create a custom calculation:
+
+1.	Create a New Calculated Field
+In the Data Source Pane, right-click on your data source and select "Create Calculated Field".
+2.	Enter Your Calculation:
+In the calculated field editor, you can use functions, operators, and field references to define your calculation.
+ For example, you can create a calculated field to calculate profit margin as (SUM([Profit]) / SUM([Sales])) * 100.
+3.	Name and Save the Calculated Field:
+Give your calculated field a meaningful name.
+Click the "OK" or "Apply" button to save the calculated field.
+4.	Use the Calculated Field in Your Worksheet:
+You can now use the calculated field like any other field in your worksheet. Drag it to the Rows or Columns shelf, use it in filters, or create visualizations based on it.
+
