@@ -1,0 +1,29 @@
+EXPERIMENT 13
+AIM: Creating dashboards and storytelling, design for different displays, adding interactivity
+Step 1 − Create a blank worksheet by using the add worksheet icon located at the bottom of the
+workbook.
+Drag the dimension Segment to the columns shelf and the dimension Sub-Category to the Rows Shelf. 
+Drag and drop the measure Sales to the Color shelf and the measure Profit to the Size shelf.
+This worksheet is referred as the Master worksheet. Right-click and rename this worksheet as Sales_Profits. 
+
+Step 2 − Create another sheet to hold the details of the Sales across the States. For this, drag the dimension
+State to the Rows shelf and the measure Sales to the Columns shelf as shown in the following screenshot. Next, apply a filter to the State field to arrange the Sales in a descending order.
+Right-click and rename this worksheet as Sales_state.
+
+Step 3 − Next, create a blank dashboard by clicking the Create New Dashboard link at the bottom of
+the workbook.
+Right-click and rename the dashboard as Profit_Dashboard.
+
+Step 4 − Drag the two worksheets to the dashboard. Near the top border line of Sales Profit worksheet,
+you can see three small icons. Click the middle one, which shows the prompt Use as Filter on hovering the mouse over it.
+
+Step 5 − Now in the dashboard, click the box representing Sub-Category named Machines and segment named Consumer.
+You can notice that only the states where the sales happened for this amount of profit are filtered out in the right pane named Sales_state. This illustrates how the sheets are linked in a dashboard.
+
+Click Edit Details to update the title of your viz, add a description, and more. Click Save.
+Your story is now live on the web.
+
+To share with colleagues, click Share at the bottom of your viz.
+
+
+
