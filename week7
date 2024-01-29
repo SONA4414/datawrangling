@@ -1,0 +1,57 @@
+EXPERIMENT- 7
+AIM: Getting started with tableau software using data file formats, connecting data to tableau, creating basic charts (line, bar charts, tree maps) using the show me panel.
+SOURCE CODE:
+Connect Tableau to the data file:
+1.	To open the application, click the Tableau icon on your desktop (or in your Start menu).
+2.	In the Connect panel at the left side of the Start page, click the superstore from saved datasets
+3.	Select the Orders sheet from the navigation menu on the left and drag it onto
+4.	After loading we can perform data cleaning, data preprocessing, feature extraction to some extent.
+Understanding different Sections in Tableau:
+
+Tableau work-page consist of different section. Let’s understand them first before plotting our graphs
+•	Menu Bar: Here you’ll find various commands such as File, Data, and Format.
+•	Toolbar Icon: The toolbar contains a number of buttons that enable you to perform various tasks with a click, such as Save, Undo, and New Worksheet.
+•	Dimension Shelf: This shelf contains all the categorical columns under it. example: categories, segments, gender, name, etc
+•	Measure Shelf: This shelf contains all numerical columns under it like profit, total sales, discount, etc
+•	Page Shelf: This shelf is used for joining pages and creates animations. we will come on it later
+•	Filter Shelf: You can choose which data to include and exclude using the Filters shelf, for example, you might want to analyze the profit for each customer segment, but only for certain shipping containers and delivery times. You may make a view like this by putting fields on the Filters tier.
+•	Marks Card: The visualization can be designed using the Marks card. The markings card can be used to change the data components of the visualization, such as color, size, shape, path, label, and tooltip.
+•	Worksheet: In the workbook, the worksheet is where the real visualization may be seen. The
+worksheet	contains	information	about	the	visual’s	design	and	functionality.
+ 
+
+
+
+ 
+
+
+
+•	Data Source: Using Data Source we can add new data, modify, remove data.
+•	Current Sheet: The current sheets are those sheets which we have created and to those, we can give some names.
+•	New Sheet: If we want to create a new worksheet ( blank canvas ) we can do using this tab.
+•	New Dashboard: This button is used to create a dashboard canvas.
+•	New Storyboard: It is used to create a new story
+
+
+Creating Visuals in Tableau
+
+
+Tableau supports the following data types:
+
+
+Boolean: True and false can be stored in this data type.
+Date/Date time: This data type can help in leveraging Tableau’s default date hierarchy
+behavior when applied to valid date or Date Time fields.
+Number: These are values that are numeric. Values can be integers or floating-point numbers (numbers with decimals).
+ 
+String: This is a sequence of characters encased in single or double quotation marks.
+Geolocation: These are values that we need to plot maps.
+Follow these steps to create a visual:
+1.	Drag the dimension and measure in row and column input field and it will automatically suggest a graph best fitted on data.
+2.	you can change the graph by clicking on the show me button and select whichever graph you want.
+3.	you can also remove the axis just by dragging and dropping them under the marks card (remove field).
+4.	Show Me: When you click this label, a palette appears, giving you rapid access to many options for showing the selected types of fields. The palette changes depending on the fields in the worksheet you’ve selected or are active.
+The Profit field is colored green on the Rows shelf, indicating that it's continuous. Also, the field name changes to SUM(Profit). That’s because measures are automatically aggregated when you add them to the view, and the default aggregation for this measure is SUM
+Tableau transforms the table into a line chart and creates a vertical axis (along the left side) for the measure.
+ A line chart is a great way to compare data over time and identify trends effectively.
+This line chart shows profit over time. Each point along the line shows the sum of profit for the corresponding year
