@@ -1,0 +1,40 @@
+EXPERIMENT-11
+AIM: Structuring the data, sorting and filtering tableau data, pivoting tableau data.
+
+Structuring Data
+Your organization is having a challenge of dealing with large volume of data. There is no proper flow to understand the data in such volume. we have the the challenge of structuring the data to make it in a proper order for the presentation.
+The following are different concepts which can help use to understand the data in such a large volume a)sorting, b)sets, c)groups, d)bins, e)hierarchies
+Create Hierarchy
+Hierarchies can be building in Tableau to visualize the data in granular level. Tableau hierarchies can be created by following the given steps.
+Step 1) Go to a worksheet.
+Select a dimension to create a hierarchy. Right-click on the dimension.
+Select ‘Hierarchy’ option.
+Click on ‘Create hierarchy’ option
+
+Step 2) It opens the ‘Create Hierarchy’ Window.
+
+1.	Enter a name for hierarchy.
+2.	Click on OK
+
+Build Sets
+Sets create a set of members out of the field present in a data set. It acts as a separated field or dimension. The procedure to build sets is given as follows.
+
+Step 1) Go to a Worksheet.
+
+1.	Right-click on a dimension.
+2.	Select ‘Create’ option.
+3.	Click on ‘Set’ option.
+
+Step 2) It opens ‘Create Set’ Window.
+
+1.	Name the set to be created.
+2.	Select the members needs to be added in the set.
+3.	Click on OK.
+
+To create a data source filter
+1.	On the data source page, click Add in the Filters section in the upper-right corner of the page
+
+Tableau Data Sorting
+In the data source, data can be stored based on the user requirement. It can be sorted using data source
+order such as A to Z ascending, Z to A descending, A to Z ascending per table
+and Z to A descending per table.
