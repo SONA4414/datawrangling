@@ -1,0 +1,42 @@
+EXPERIMENT-5
+AIM: Write a python program to download & display content of robot.txt for en.wikipedia.org.
+!pip install requests import requests
+response = requests.get("https://en.wikipedia.org/robots.txt") test=response.text
+print("robots.txt for https://en.wikipedia.org/") print("==========================================")
+print(test.encode("utf-8")) OUTPUT:
+robots.txt for https://en.wikipedia.org/
+==========================================
+b'\xef\xbb\xbf# robots.txt for http://www.wikipedia.org/ and friends\n#\n# Please note: There are a lot of pages on this site, and there are\n# some misbehaved spiders out there that go _way_ too fast. If you\'re\n# irresponsible, your access to the site may be blocked.\n#\n\n# Observed spamming large amounts of https://en.wikipedia.org/?curid=NNNNNN\n# and ignoring
+
+
+from urllib.request import urlopen
+with urlopen("https://en.wikipedia.org/robots.txt") as stream: print("robots.txt for https://en.wikipedia.org/") print("==========================================")
+print(stream.read().decode("utf-8")) OUTPUT:
+robots.txt for https://en.wikipedia.org/
+==========================================
+# robots.txt for http://www.wikipedia.org/ and friends #
+# Please note: There are a lot of pages on this site, and there are
+# some misbehaved spiders out there that go _way_ too fast. If you're # irresponsible, your access to the site may be blocked.
+ 
+#url of the robots.txt file for en.wikipedia.org url="https://en.wikipedia.org/robots.txt"
+try:
+#send a HTTP GET request to the URL response=requests.get(url)
+#check if the request is successful or not(status code 200) if response.status_code==200:
+with open("robots.txt","w",encoding="utf-8") as file: file.write(response.text)
+#Display the content of robots.txt file print("Content of robots.txt from en.wikipedia.org") print(response.text)
+print("robots.txt downloaded successfully and saved as 'robots.txt'") else:
+print(f"Failed to retrieve robots.txt.status code:{response.status_code}") except requests.exceptions.RequestException as e:
+print(f"An error occurred:{e}")
+
+
+OUTPUT:
+
+Content of robots.txt from en.wikipedia.org
+# robots.txt for http://www.wikipedia.org/ and friends #
+# Please note: There are a lot of pages on this site, and there are # some misbehaved spiders out there that go _way_ too fast. If you're # irresponsible, your access to the site may be blocked.
+#
+
+# Observed spamming large amounts of https://en.wikipedia.org/?curid=NNNNNN # and ignoring 429 ratelimit responses, claims to respect robots:
+# http://mj12bot.com/ User-agent: MJ12bot Disallow: /
+# advertising-related bots:
+User-agent: Mediapartners-Google*
