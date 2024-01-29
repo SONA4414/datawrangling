@@ -1,0 +1,254 @@
+EXPERIMENT-3
+AIM: Develop the python Shell Script to do the basic data cleanup on child labor and child marriage data.xlsx
+a)	Check duplicates and missing data
+b)	Eliminate mismatches
+c)	Cleans line breaks, spaces, and special characters.
+
+Code:
+import pandas as pd
+cl= pd.read_csv('National Child Labour.csv') cl
+cl.shape
+cm= pd.read_csv('Child Marriage.csv') cm
+Output:
+
+
+Country Name	Female Married
+by 15	Female Married
+by 18	Reference
+year	Data source	Male Married
+by 18	Male Reference
+year	Data source.1	
+
+0	
+Afghanistan	
+4	
+28.0	
+2017.0	
+ALCS 2016-17	
+7	
+2015.0	
+DHS 2015
+
+
+1	
+
+Albania	
+
+1@	
+
+12.0	
+
+2018.0	
+
+DHS 2017-18	
+
+1	
+
+2018.0	
+DHS 2017-18
+ 
+cm.shape Output:
+(202, 8)
+
+cl.isnull().sum() Output:
+eries Name	3
+Series Code	5
+Country Name	5
+Country Code	5
+cm.isnull().sum() Output:
+Country Name	0
+Female Married by 15	74
+Female Married by 18	74
+
+
+#to remove missing values from data cl=cl.dropna()
+cl.duplicated().sum() cm.duplicated().sum()
+cm['Male Married by 18'].duplicated().sum() cm.loc[cm.duplicated()]
+cl = cl.drop_duplicates() cm=cm.drop_duplicates() cl.shape
+cl=cl.rename(columns={'Country Name':'Country'}) cl.columns
+Output:
+
+Index(['Series Name', 'Series Code', 'Country', 'Country Code',
+'1990 [YR1990]', '2000 [YR2000]', '2013 [YR2013]', '2014 [YR2014]',
+'2015 [YR2015]', '2016 [YR2016]', '2017 [YR2017]', '2018 [YR2018]',
+'2019 [YR2019]', '2020 [YR2020]', '2021 [YR2021]', '2022 [YR2022]'],
+dtype='object')
+
+
+cm.isnull().sum()
+ 
+cm['Female Married by 18']=cm['Female Married by 18'].fillna(value=0) cm.tail(30)
+Output:
+
+
+Country Name	Female Married
+by 15	Female Married
+by 18	Reference
+year	Data source	Male Married
+by 18	Male Reference
+year	Data source.1	
+
+
+172	
+
+Suriname	
+
+9	
+
+36.0	
+
+2018.0	
+
+MICS 2018	
+
+20	
+
+2018.0	
+MICS 2018
+
+173	
+Sweden	
+NaN	
+0.0	
+NaN	
+NaN	
+NaN	
+NaN	
+NaN
+
+
+cm['Reference year']=cm['Reference year'].fillna(method='ffill') cm.tail(30)
+cm['Male Married by 18']=cm['Male Married by 18'].fillna(method='bfill') cm.tail(30)
+cm=cm.dropna() cl[cl['Country Code']=='AND']
+cl=cl.drop(cl[cl['Country Code']=='AND'].index) new=pd.concat([cl,cm],axis=1)
+cl.head() new2=new.merge(cl,indicator=True,how='outer') new2
+#to remove line breaks columnswise cl['Country'] = cl['Country'].str.replace('\n', ' ') #to remove line breaks row-wise cl.replace('\n','',regex=True)
+#to display whitespaces
+cm['Data source']=cm['Data source'].str.replace(' ','') #to remove special characters from columns
+cm['Female Married by 15'] = cm['Female Married by 15'].str.replace(r'\W', '', regex=True)
+ 
+cm.head(20)
+cm[cm['Female Married by 15'] == '1'] Output:
+
+Country Name	Female Married
+by 15	Female Married
+by 18	Reference
+year	Data source	Male Married
+by 18	Male Reference
+year	Data source.1	
+
+
+1	
+
+Albania	
+
+1	
+
+12.0	
+
+2018.0	
+
+DHS2017-18	
+
+1	
+
+2018.0	
+DHS 2017-18
+
+
+60	
+
+Eswatini	
+
+1	
+
+5.0	
+
+2014.0	
+
+MICS2014	
+
+1	
+
+2014.0	
+MICS 2014
+
+99	
+Lesotho	
+1	
+16.0	
+2018.0	
+MICS2018	
+2	
+2018.0	
+MICS 2018
+
+XLRD PROGRAM:
+!pip install xlrd import xlrd import re
+book = xlrd.open_workbook("SOWC 2014 Stat Tables_Table 9.xls") sheet = book.sheet_by_name("Table 9 ")
+data = {}
+for i in range(14, sheet.nrows):
+
+
+# Start at 14th row, because that is where the countries begin row = sheet.row_values(i)
+country = row[1] data[country] = { 'child_labor': {
+'total': [row[4], row[5]],
+'male': [row[6], row[7]],
+'female': [row[8], row[9]],
+ 
+},
+'child_marriage': {
+'married_by_15': [row[10], row[11]],
+'married_by_18': [row[12], row[13]],
+}
+}
+if country == "Zimbabwe": break
+import pprint pprint.pprint(data) OUTPUT:
+{'Afghanistan': {'child_labor': {'female': [9.6, ''],
+'male': [11.0, ''],
+'total': [10.3, '']},
+'child_marriage': {'married_by_15': [15.0, ''],
+'married_by_18': [40.4, '']}}, 'Albania': {'child_labor': {'female': [9.4, ' '],
+'male': [14.4, ' '],
+'total': [12.0, ' ']},
+'child_marriage': {'married_by_15': [0.2, ''],
+'married_by_18': [9.6, '']}},
+# Extract data from the sheet data = []
+for row_idx in range(14, sheet.nrows): # Skip the header row row = sheet.row_values(row_idx)
+data.append(row)
+# Check for duplicates duplicates = []
+seen = set()
+for row in data:
+row_str = ','.join(map(str, row))
+ if row_str in seen: duplicates.append(row)
+else:
+seen.add(row_str) if duplicates:
+print("Duplicates found:")
+for duplicate_row in duplicates: print(duplicate_row)
+else:
+print("No duplicates found.") Output:
+Duplicates found:
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+
+
+
+# Check for missing data missing_data_rows = []
+for row_idx, row in enumerate(data):
+if any(cell == '' or cell is None for cell in row): missing_data_rows.append(row_idx)
+if missing_data_rows:
+print("Missing data found in rows:") for row_idx in missing_data_rows:
+print(f"Row {row_idx + 2}") # Adding 2 to account for header and 0-based indexing else:
+print("No missing data found.") Output:
+ 
+Missing data found in rows:
+Row 2
+Row 3
+Row 4
+Row 5
+Row 6
+Row 7
+Row 8
+Row 9
+Row 10
